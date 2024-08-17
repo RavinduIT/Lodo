@@ -20,6 +20,7 @@ int main () {
 		if(CurrentRoll == 6){
 			CurrentRoll = BaseToBoard(piece);
 			if(CurrentRoll = 6){
+				piece = SelectPiece();
 				CurrentRoll = BaseToBoard(piece);
 				if(CurrentRoll == 6){
 					CurrentRoll == 0;

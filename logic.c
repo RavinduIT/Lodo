@@ -331,8 +331,53 @@ void Reset (int location) {
 
 }
 
-int SelectPiece (int player){
+int SelectPiece (int player, int roll){
 	int piece;
+	switch (player){
+		case 1:
+			int cancapture[4];
+			int minval = 54;
+			int choosepiece;
+			for(int c = 1; c <= 4; c++){
+				int location = (PieceLocation[c].Red + roll);
+				for(int d = 1; d <= 4; d++){
+					if(location == PieceLocation[d].Green || location == PieceLocation[d].Yellow || location == PieceLocation[d].Blue && (block[location - roll] >= block[location])){
+						if(path[c].Red == 0){
+							cancapture[c - 1] = (50 - location);  // clockwise
+						}else if(path[c].Red == 1){
+							cancapture[c - 1] =  
+						}		
+					}
+				}
+			}
+			for(int x = 0; x <= 3; x++){
+				if(cancapture[x] < minval){
+					minval == cancapture[x];
+					choosepiece = (x + 1);
+				}
+			}
+			return choosepiece;
+			break;
+
+		case 2:
+
+
+			break;
+		
+		case 3:
+
+
+			break;
+
+		case 4:
+
+
+			break;
+			}
+
+
+
+	}
 	
 
 	return piece;
